@@ -1,0 +1,76 @@
+{
+  "_schema_version": "1.0",
+  "_notes": "UKEF Export Finance Application Case File. Copy this file, rename it case_COMPANYNAME.json, fill in what you know, leave unknown fields as null. Run: python run_full_audit.py case_COMPANYNAME.json",
+  "_schema_version": "1.0",
+  "_notes": "GreenTech Solutions Ltd — clean growth SME exporting solar storage systems",
+
+    "company": {
+    "name": "BridgePower Ltd",
+    "registration_number": "99887766",
+    "employees": 210,
+    "turnover_gbp": 42000000,
+    "sector": "Power Infrastructure / Hybrid Energy Systems",
+    "founded_year": 2012,
+    "website": "https://www.bridgepower.co.uk",
+    "uk_regions": ["South East", "Yorkshire"],
+    "uk_manufacturing": true,
+    "beneficial_owners": ["Private equity backed"],
+    "group_structure": "Holding company with 2 subsidiaries"
+  },
+
+  "finance_request": {
+    "product": "Buyer Credit Facility",
+    "facility_type": "Export Finance Loan",
+    "amount_gbp": 15000000,
+    "tenor_months": 60,
+    "use_of_proceeds": "Supply modular hybrid power systems to Africa",
+    "collateral": "Project assets and guarantees",
+    "repayment_source": "Long-term power purchase agreements"
+  },
+
+  "additionality": {
+    "banks_approached": ["Standard Chartered", "Santander"],
+    "outcome": "Declined due to emerging market risk",
+    "evidence_available": true,
+    "notes": "Political risk and tenor exceed private bank appetite"
+  },
+
+  "export_plan": {
+    "target_markets": ["Kenya", "Ghana", "Nigeria"],
+    "signed_contracts": false,
+    "pipeline_value_gbp": 30000000,
+    "export_revenue_forecast_3yr_gbp": 75000000,
+    "route_to_market": "Government-backed infrastructure projects",
+    "named_buyers": ["Kenya Power Authority"],
+    "export_percentage_of_revenue": 70
+  },
+
+  "strategic_pillars": {
+    "clean_growth_evidence": "Hybrid solar-diesel systems reducing emissions",
+    "co2_avoided_tonnes_pa": 25000,
+    "mw_capacity_enabled": 120,
+    "supply_chain_uk_content_pct": 55,
+    "supply_chain_notes": "Engineering and assembly in UK, components imported",
+    "regional_jobs_created": 40,
+    "regional_jobs_retained": 150,
+    "regional_investment_gbp": 5000000
+  },
+
+  "financials": {
+    "ebitda_gbp": 5000000,
+    "net_assets_gbp": 15000000,
+    "existing_debt_gbp": 8000000,
+    "credit_rating": "B+",
+    "profitable": true,
+    "financial_projections_available": true
+  },
+
+  "compliance": {
+    "kyc_complete": true,
+    "sanctions_screened": true,
+    "export_controls_checked": true,
+    "aml_checked": true,
+    "pep_screening_done": false,
+    "notes": "PEP screening pending for one overseas partner"
+  }
+}

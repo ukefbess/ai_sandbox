@@ -1,0 +1,47 @@
+object: agent
+id: ukef-router
+name: ukef-router
+versions:
+  latest:
+    metadata:
+      description: ''
+      modified_at: '1777819240'
+      microsoft.voice-live.enabled: 'false'
+      microsoft.voice-live.configuration: '{"session":{"voice":{"name":"en-US-Ava:DragonHDLatestNeural","type":"azure-standard","temperature":0.8,"rate":"1","isHdVoice":true},"inputAudioTranscription":{"model":"azure-speech","language":"auto-detect"},"turnDetection":{"type":"azure_semantic_vad","endOfUtteranceDetection":null,"removeFillerWords":true},"inputAudioNoiseReduction":null,"inputAudioEchoCancellation":null,"fillerResponse":null,"avatar":null,"proactiveEngagement":false}}'
+    object: agent.version
+    id: ukef-router:4
+    name: ukef-router
+    version: '4'
+    description: ''
+    created_at: 1777819250
+    definition:
+      kind: prompt
+      model: model-router-1
+      instructions: "You are the UKEF intake router and conversation classifier for\
+        \ UK Export Finance.\n\nOn every message, first classify the intent:\n\nNEW\
+        \ AUDIT: A full case file is provided (contains company name, employees, \n\
+        turnover, finance request). Extract core data and confirm intake complete.\n\
+        Output: \"INTENT: NEW_AUDIT\" followed by structured case summary.\n\nPARAMETER\
+        \ PIVOT: User asks a \"what if\" question with a specific variable \nchange\
+        \ (e.g. \"reduce tenor to 36 months\", \"increase facility to £20m\").\nOutput:\
+        \ \"INTENT: PARAMETER_PIVOT\" followed by the specific change identified.\n\
+        \nQUERY: User asks a question about an existing case already in this conversation.\n\
+        Output: \"INTENT: QUERY\" followed by the relevant context prepared for the\
+        \ summarizer.\n\nRules:\n- Required for NEW_AUDIT: company name, employee\
+        \ count, turnover.\n- If NEW_AUDIT but fields missing: ask ONE combined question\
+        \ for all missing items.\n- Never perform credit analysis. Never score applications.\n\
+        - Always start your response with INTENT: [type] on the first line."
+      tools: []
+    status: active
+agent_endpoint:
+  version_selector:
+    version_selection_rules:
+    - type: FixedRatio
+      agent_version: '@latest'
+      traffic_percentage: 100
+  protocols:
+  - responses
+  authorization_schemes:
+  - type: Entra
+    isolation_key_source:
+      kind: Entra

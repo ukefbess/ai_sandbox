@@ -1,0 +1,74 @@
+{
+  "_schema_version": "1.0",
+  "_notes": "UKEF Export Finance Application Case File. Copy this file, rename it case_COMPANYNAME.json, fill in what you know, leave unknown fields as null. Run: python run_full_audit.py case_COMPANYNAME.json",
+
+  "company": {
+    "name": null,
+    "registration_number": null,
+    "employees": null,
+    "turnover_gbp": null,
+    "sector": null,
+    "founded_year": null,
+    "website": null,
+    "uk_regions": [],
+    "uk_manufacturing": null,
+    "beneficial_owners": [],
+    "group_structure": null
+  },
+
+  "finance_request": {
+    "product": null,
+    "facility_type": null,
+    "amount_gbp": null,
+    "tenor_months": null,
+    "use_of_proceeds": null,
+    "collateral": null,
+    "repayment_source": null
+  },
+
+  "additionality": {
+    "banks_approached": [],
+    "outcome": null,
+    "evidence_available": null,
+    "notes": null
+  },
+
+  "export_plan": {
+    "target_markets": [],
+    "signed_contracts": null,
+    "pipeline_value_gbp": null,
+    "export_revenue_forecast_3yr_gbp": null,
+    "route_to_market": null,
+    "named_buyers": [],
+    "export_percentage_of_revenue": null
+  },
+
+  "strategic_pillars": {
+    "clean_growth_evidence": null,
+    "co2_avoided_tonnes_pa": null,
+    "mw_capacity_enabled": null,
+    "supply_chain_uk_content_pct": null,
+    "supply_chain_notes": null,
+    "regional_jobs_created": null,
+    "regional_jobs_retained": null,
+    "regional_investment_gbp": null
+  },
+
+  "financials": {
+    "ebitda_gbp": null,
+    "net_assets_gbp": null,
+    "existing_debt_gbp": null,
+    "credit_rating": null,
+    "profitable": null,
+    "financial_projections_available": null
+  },
+
+  "compliance": {
+    "kyc_complete": null,
+    "sanctions_screened": null,
+    "export_controls_checked": null,
+    "aml_checked": null,
+    "pep_screening_done": null,
+    "notes": null
+  }
+}

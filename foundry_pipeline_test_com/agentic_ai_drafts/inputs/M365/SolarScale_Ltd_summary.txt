@@ -1,0 +1,41 @@
+--- UKEF CASE SUMMARY: SolarScale Ltd ---
+
+[COMPANY]
+Name: SolarScale Ltd
+Employees: 150
+Turnover gbp: 30000000
+Sector: Solar / Renewable Energy
+Founded year: 2018
+Uk regions: ['West Midlands']
+Uk manufacturing: True
+Beneficial owner: Jane Smith (100%)
+
+[FINANCE_REQUEST]
+Facility type: Export Working Capital
+Amount gbp: 2500000
+Tenor months: 24
+Use of proceeds: Working capital to fulfil solar panel export contracts
+Collateral: Debenture over assets
+
+[ADDITIONALITY]
+Bank approached: Barclays
+Outcome: Declined — insufficient export track record
+Evidence available: True
+
+[EXPORT_PLAN]
+Target markets: ['Germany', 'Netherlands', 'Poland']
+Signed contracts: 1
+Pipeline value gbp: 4000000
+Export revenue forecast 3yr gbp: 9000000
+Route to market: Direct to EPC contractors
+
+[STRATEGIC_PILLARS]
+Clean growth evidence: 15MW capacity enabled, 8,000 tCO2e avoided annually
+Supply chain uk content pct: 40
+Regional jobs created: 22
+
+[COMPLIANCE]
+Kyc complete: False
+Sanctions screened: False
+Export controls checked: False
+

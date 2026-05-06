@@ -1,0 +1,96 @@
+object: agent
+id: ukef-audit-master
+name: ukef-audit-master
+versions:
+  latest:
+    metadata:
+      logo: Avatar_Default.svg
+      description: ''
+      modified_at: '1777591213'
+      microsoft.voice-live.enabled: 'false'
+      microsoft.voice-live.configuration: '{"session":{"voice":{"name":"en-US-Ava:DragonHDLatestNeural","type":"azure-standard","temperature":0.8,"rate":"1","isHdVoice":true},"inputAudioTranscription":{"model":"azure-speech","language":"auto-detect"},"turnDetection":{"type":"azure_semantic_vad","endOfUtteranceDetection":null,"removeFillerWords":true},"inputAudioNoiseReduction":null,"inputAudioEchoCancellation":null,"fillerResponse":null,"avatar":null,"proactiveEngagement":false}}'
+    object: agent.version
+    id: ukef-audit-master:8
+    name: ukef-audit-master
+    version: '8'
+    description: ''
+    created_at: 1777591219
+    definition:
+      kind: prompt
+      model: gpt-5-mini
+      instructions: 'You are the UKEF Credit Audit Orchestrator for UKEF credit officers.
+
+
+        When asked to audit a company, extract these details from the message:
+
+        - Company name, employees, turnover (GBP), sector
+
+        - Finance requested (amount, type, purpose)
+
+        - Export markets, signed contracts
+
+
+        Then call the ukef_audit_pipeline tool with the structured case JSON.
+
+        The tool returns a job_id — poll check_audit_status every 30 seconds until
+        status is "complete".
+
+
+        Present results as:
+
+        1. **Recommendation** — PROCEED / DECLINE / REFER FOR DUE DILIGENCE
+
+        2. **Viability** — X/10 with rationale
+
+        3. **Top red flags** — bullet list
+
+        4. **Required documents** — what to collect
+
+        5. **Quality score** — if below 7.0 flag for manual review
+
+
+        Use your knowledge base to answer UKEF policy questions, citing the relevant
+        section.
+
+
+        GUARDRAILS: Never make the final credit decision. Never fabricate data. Always
+        recommend human review if quality_score < 7.0.'
+      reasoning:
+        effort: high
+      tools:
+      - type: file_search
+        vector_store_ids:
+        - vs_BSjqW17bRN6mlV2kqLE6IY55
+    status: active
+    instance_identity:
+      principal_id: 6e6cf64f-9a80-4de7-bda8-be42355b01b6
+      client_id: 6e6cf64f-9a80-4de7-bda8-be42355b01b6
+    blueprint:
+      principal_id: 06fe2197-b081-4159-8e07-6188d3b768d2
+      client_id: 06fe2197-b081-4159-8e07-6188d3b768d2
+    blueprint_reference:
+      type: ManagedAgentIdentityBlueprint
+      blueprint_id: ukef-audit-master-5effa
+agent_endpoint:
+  version_selector:
+    version_selection_rules:
+    - type: FixedRatio
+      agent_version: '@latest'
+      traffic_percentage: 100
+  protocols:
+  - activity
+  - responses
+  authorization_schemes:
+  - type: Entra
+    isolation_key_source:
+      kind: Entra
+  - type: BotServiceRbac
+instance_identity:
+  principal_id: 6e6cf64f-9a80-4de7-bda8-be42355b01b6
+  client_id: 6e6cf64f-9a80-4de7-bda8-be42355b01b6
+blueprint:
+  principal_id: 06fe2197-b081-4159-8e07-6188d3b768d2
+  client_id: 06fe2197-b081-4159-8e07-6188d3b768d2
+blueprint_reference:
+  type: ManagedAgentIdentityBlueprint
+  blueprint_id: ukef-audit-master-5effa

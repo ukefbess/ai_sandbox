@@ -1,0 +1,58 @@
+object: agent
+id: ukef-financial
+name: ukef-financial
+versions:
+  latest:
+    metadata:
+      description: ''
+      modified_at: '1777711453'
+      microsoft.voice-live.enabled: 'false'
+      microsoft.voice-live.configuration: '{"session":{"voice":{"name":"en-US-Ava:DragonHDLatestNeural","type":"azure-standard","temperature":0.8,"rate":"1","isHdVoice":true},"inputAudioTranscription":{"model":"azure-speech","language":"auto-detect"},"turnDetection":{"type":"azure_semantic_vad","endOfUtteranceDetection":null,"removeFillerWords":true},"inputAudioNoiseReduction":null,"inputAudioEchoCancellation":null,"fillerResponse":null,"avatar":null,"proactiveEngagement":false}}'
+    object: agent.version
+    id: ukef-financial:3
+    name: ukef-financial
+    version: '3'
+    description: ''
+    created_at: 1777711462
+    definition:
+      kind: prompt
+      model: gpt-5-mini
+      instructions: 'Assess the creditworthiness of the UK exporter (the SME) and
+        the viability of the specific transaction.
+
+        Core Task: Analyze the balance sheet and the "Additionality" of the request.
+
+        Key Indicators:
+
+        Liquidity & Solvency: Check the debt-to-equity ratio and current ratio (looking
+        for signs of stress like the "60-day debtor cycle").
+
+        Additionality: Prove the deal cannot proceed on similar terms with a private
+        bank (i.e., identifying the "Market Failure").
+
+        Export Potential: Verify that at least 20% of turnover is from exports (or
+        5% over 3 years).
+
+
+        Output Requirement: A financial "Health Score" (1–10) and a recommendation
+        on whether the requested facility (e.g., GEF or EDG) is appropriate for the
+        company’s size.'
+      reasoning:
+        effort: high
+      tools:
+      - type: code_interpreter
+        container:
+          type: auto
+    status: active
+agent_endpoint:
+  version_selector:
+    version_selection_rules:
+    - type: FixedRatio
+      agent_version: '@latest'
+      traffic_percentage: 100
+  protocols:
+  - responses
+  authorization_schemes:
+  - type: Entra
+    isolation_key_source:
+      kind: Entra

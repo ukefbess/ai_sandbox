@@ -1,0 +1,42 @@
+{
+    "company": {
+    "name": "SolarScale Ltd",
+    "employees": 150,
+    "turnover_gbp": 30000000,
+    "sector": "Solar / Renewable Energy",
+    "founded_year": 2018,
+    "uk_regions": ["West Midlands"],
+    "uk_manufacturing": true,
+    "beneficial_owner": "Jane Smith (100%)"
+  },
+  "finance_request": {
+    "facility_type": "Export Working Capital",
+    "amount_gbp": 2500000,
+    "tenor_months": 24,
+    "use_of_proceeds": "Working capital to fulfil solar panel export contracts",
+    "collateral": "Debenture over assets"
+  },
+  "additionality": {
+    "bank_approached": "Barclays",
+    "outcome": "Declined — insufficient export track record",
+    "evidence_available": true
+  },
+  "export_plan": {
+    "target_markets": ["Germany", "Netherlands", "Poland"],
+    "signed_contracts": 1,
+    "pipeline_value_gbp": 4000000,
+    "export_revenue_forecast_3yr_gbp": 9000000,
+    "route_to_market": "Direct to EPC contractors"
+  },
+  "strategic_pillars": {
+    "clean_growth_evidence": "15MW capacity enabled, 8,000 tCO2e avoided annually",
+    "supply_chain_uk_content_pct": 40,
+    "regional_jobs_created": 22
+  },
+  "compliance": {
+    "kyc_complete": false,
+    "sanctions_screened": false,
+    "export_controls_checked": false
+  }
+}
+

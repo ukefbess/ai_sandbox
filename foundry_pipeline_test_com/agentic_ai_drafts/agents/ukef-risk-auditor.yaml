@@ -1,0 +1,47 @@
+object: agent
+id: ukef-risk-auditor
+name: ukef-risk-auditor
+versions:
+  latest:
+    metadata:
+      description: ''
+      modified_at: '1777719835'
+      microsoft.voice-live.enabled: 'false'
+      microsoft.voice-live.configuration: '{"session":{"voice":{"name":"en-US-Ava:DragonHDLatestNeural","type":"azure-standard","temperature":0.8,"rate":"1","isHdVoice":true},"inputAudioTranscription":{"model":"azure-speech","language":"auto-detect"},"turnDetection":{"type":"azure_semantic_vad","endOfUtteranceDetection":null,"removeFillerWords":true},"inputAudioNoiseReduction":null,"inputAudioEchoCancellation":null,"fillerResponse":null,"avatar":null,"proactiveEngagement":false}}'
+    object: agent.version
+    id: ukef-risk-auditor:5
+    name: ukef-risk-auditor
+    version: '5'
+    description: ''
+    created_at: 1777719844
+    definition:
+      kind: prompt
+      model: gpt-5-mini
+      instructions: 'Review the SME application specifically for financial and operational
+        risks mentioned in Strategic Enabler 2. Identify ''Red Flags'' regarding financial
+        crime, sustainability, or viability.
+
+        Output format: structured list only. Maximum 10 red flags.
+
+        Each item: Flag name | Risk level (H/M/L) | One-line mitigation.
+
+        No narrative paragraphs. No preamble. No closing offers.'
+      reasoning:
+        effort: high
+      tools:
+      - type: file_search
+        vector_store_ids:
+        - vs_BSjqW17bRN6mlV2kqLE6IY55
+    status: active
+agent_endpoint:
+  version_selector:
+    version_selection_rules:
+    - type: FixedRatio
+      agent_version: '@latest'
+      traffic_percentage: 100
+  protocols:
+  - responses
+  authorization_schemes:
+  - type: Entra
+    isolation_key_source:
+      kind: Entra

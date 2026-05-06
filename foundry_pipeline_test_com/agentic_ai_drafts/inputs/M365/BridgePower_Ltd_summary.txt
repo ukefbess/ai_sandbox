@@ -1,0 +1,65 @@
+--- UKEF CASE SUMMARY: BridgePower Ltd ---
+
+[COMPANY]
+Name: BridgePower Ltd
+Registration number: 99887766
+Employees: 210
+Turnover gbp: 42000000
+Sector: Power Infrastructure / Hybrid Energy Systems
+Founded year: 2012
+Website: https://www.bridgepower.co.uk
+Uk regions: ['South East', 'Yorkshire']
+Uk manufacturing: True
+Beneficial owners: ['Private equity backed']
+Group structure: Holding company with 2 subsidiaries
+
+[FINANCE_REQUEST]
+Product: Buyer Credit Facility
+Facility type: Export Finance Loan
+Amount gbp: 15000000
+Tenor months: 60
+Use of proceeds: Supply modular hybrid power systems to Africa
+Collateral: Project assets and guarantees
+Repayment source: Long-term power purchase agreements
+
+[ADDITIONALITY]
+Banks approached: ['Standard Chartered', 'Santander']
+Outcome: Declined due to emerging market risk
+Evidence available: True
+Notes: Political risk and tenor exceed private bank appetite
+
+[EXPORT_PLAN]
+Target markets: ['Kenya', 'Ghana', 'Nigeria']
+Signed contracts: False
+Pipeline value gbp: 30000000
+Export revenue forecast 3yr gbp: 75000000
+Route to market: Government-backed infrastructure projects
+Named buyers: ['Kenya Power Authority']
+Export percentage of revenue: 70
+
+[STRATEGIC_PILLARS]
+Clean growth evidence: Hybrid solar-diesel systems reducing emissions
+Co2 avoided tonnes pa: 25000
+Mw capacity enabled: 120
+Supply chain uk content pct: 55
+Supply chain notes: Engineering and assembly in UK, components imported
+Regional jobs created: 40
+Regional jobs retained: 150
+Regional investment gbp: 5000000
+
+[FINANCIALS]
+Ebitda gbp: 5000000
+Net assets gbp: 15000000
+Existing debt gbp: 8000000
+Credit rating: B+
+Profitable: True
+Financial projections available: True
+
+[COMPLIANCE]
+Kyc complete: True
+Sanctions screened: True
+Export controls checked: True
+Aml checked: True
+Pep screening done: False
+Notes: PEP screening pending for one overseas partner
+

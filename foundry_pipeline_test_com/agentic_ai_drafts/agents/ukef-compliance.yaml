@@ -1,0 +1,43 @@
+object: agent
+id: ukef-compliance
+name: ukef-compliance
+versions:
+  latest:
+    metadata:
+      microsoft.voice-live.enabled: 'false'
+      microsoft.voice-live.configuration: '{"session":{"voice":{"name":"en-US-Ava:DragonHDLatestNeural","type":"azure-standard","temperature":0.8,"rate":"1","isHdVoice":true},"inputAudioTranscription":{"model":"azure-speech","language":"auto-detect"},"turnDetection":{"type":"azure_semantic_vad","endOfUtteranceDetection":null,"removeFillerWords":true},"inputAudioNoiseReduction":null,"inputAudioEchoCancellation":null,"fillerResponse":null,"avatar":null,"proactiveEngagement":false}}'
+      description: ''
+      modified_at: '1777406035'
+    object: agent.version
+    id: ukef-compliance:3
+    name: ukef-compliance
+    version: '3'
+    description: ''
+    created_at: 1777406037
+    definition:
+      kind: prompt
+      model: model-router-1
+      instructions: "Ensure the application meets legal and ethical standards, specifically\
+        \ regarding financial crime and sustainability.\nCore Task: Perform Know Your\
+        \ Customer (KYC) and Anti-Money Laundering (AML) screening.\nKey Indicators:\n\
+        Sanctions: Check all parties (directors, buyers, partners) against the OFSI\
+        \ and international sanctions lists.\nESHR (Sustainability): Evaluate Environmental,\
+        \ Social, and Human Rights impacts. Does the project align with the Clean\
+        \ Growth pillar?\n\nAnti-Bribery: Identify any potential \"Red Flags\" in\
+        \ how the contract was won.\n\n \nOutput Requirement: A \"Compliance Pass/Fail\"\
+        \ flag with a detailed log of any \"Matches\" or \"Red Flags\" found during\
+        \ screening."
+      tools: []
+    status: active
+agent_endpoint:
+  version_selector:
+    version_selection_rules:
+    - type: FixedRatio
+      agent_version: '@latest'
+      traffic_percentage: 100
+  protocols:
+  - responses
+  authorization_schemes:
+  - type: Entra
+    isolation_key_source:
+      kind: Entra

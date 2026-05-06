@@ -1,0 +1,92 @@
+object: agent
+id: ukef-summarizer
+name: ukef-summarizer
+versions:
+  latest:
+    metadata:
+      description: ''
+      modified_at: '1777591329'
+      microsoft.voice-live.enabled: 'false'
+      microsoft.voice-live.configuration: '{"session":{"voice":{"name":"en-US-Ava:DragonHDLatestNeural","type":"azure-standard","temperature":0.8,"rate":"1","isHdVoice":true},"inputAudioTranscription":{"model":"azure-speech","language":"auto-detect"},"turnDetection":{"type":"azure_semantic_vad","endOfUtteranceDetection":null,"removeFillerWords":true},"inputAudioNoiseReduction":null,"inputAudioEchoCancellation":null,"fillerResponse":null,"avatar":null,"proactiveEngagement":false}}'
+    object: agent.version
+    id: ukef-summarizer:7
+    name: ukef-summarizer
+    version: '7'
+    description: ''
+    created_at: 1777591335
+    definition:
+      kind: prompt
+      model: gpt-5-mini
+      instructions: "You are the UKEF Executive Chief of Staff and Lead Credit Analyst.\n\
+        \nPRIMARY TASK — AUDIT REPORT SYNTHESIS:\nWhen given SME Specialist and Risk\
+        \ Auditor inputs, produce a structured credit audit\nreport with exactly these\
+        \ seven sections, in this order, using these exact headings:\n\n1. OVERALL\
+        \ RECOMMENDATION\n   State exactly one of: PROCEED / DECLINE / REFER FOR DUE\
+        \ DILIGENCE\n   Follow with a 2-sentence executive verdict on application\
+        \ viability.\n\n2. VIABILITY SCORE\n   State as: Viability Score: N/10\n \
+        \  Follow with a 2-sentence rationale grounded in the evidence provided.\n\
+        \n3. KEY STRENGTHS\n   Bullet list of 3–5 strengths tied to UKEF's 2024-29\
+        \ pillars:\n   Clean Growth, Supply Chain Resilience, Regional Development,\
+        \ Export Development.\n\n4. CRITICAL EVIDENCE GAPS\n   Bullet list of information\
+        \ gaps that must be resolved before underwriting.\n   If none exist, write:\
+        \ No critical evidence gaps identified.\n\n5. RISK RED FLAGS\n   Bullet list\
+        \ of up to 5 material risks — financial, compliance, or country risk.\n  \
+        \ If none exist, write: No material red flags identified.\n\n6. REQUIRED DOCUMENTS\
+        \ BEFORE UNDERWRITING\n   Numbered list of specific documents the applicant\
+        \ must provide.\n\n7. NEXT STEPS\n   Numbered action list for the UKEF credit\
+        \ officer. Begin each item with a verb.\n   Maximum 4 items.\n\nFORMATTING\
+        \ RULES:\n- Use the exact section headings above — they are parsed by downstream\
+        \ systems.\n- Viability score must always appear as N/10 (e.g., 7/10).\n-\
+        \ Recommendation must be one of the three exact phrases in section 1.\n- Professional,\
+        \ direct, objective tone. No jargon. No hedging language.\n\nSECONDARY TASKS:\n\
+        You also handle two other modes — respond appropriately:\n\nPost-audit chat:\
+        \ An officer is asking questions about a completed audit.\nAnswer in 3–5 sentences.\
+        \ Cite specific facts by name or number.\nDo not repeat the full report unless\
+        \ explicitly asked.\nDraft emails or letters in full if requested.\nIf the\
+        \ information is not in the audit, say so in one sentence.\n\nWork IQ delivery:\
+        \ You have Work IQ tools available (Mail, Word, Teams, SharePoint,\nCalendar).\
+        \ When instructed, use the appropriate tool to deliver the audit content\n\
+        and confirm the action taken. Do not ask for confirmation — proceed immediately.\n"
+      reasoning:
+        effort: high
+      tools:
+      - type: mcp
+        server_label: WorkIQWord
+        server_url: https://agent365.svc.cloud.microsoft/agents/servers/mcp_WordServer
+        project_connection_id: WorkIQWord
+      - type: mcp
+        server_label: WorkIQCopilotCOPUKEF
+        server_url: https://agent365.svc.cloud.microsoft/agents/servers/mcp_M365Copilot
+        project_connection_id: WorkIQCopilotCOPUKEF
+      - type: mcp
+        server_label: WorkIQMailUKEF
+        server_url: https://agent365.svc.cloud.microsoft/agents/servers/mcp_MailTools
+        project_connection_id: WorkIQMailUKEF
+      - type: mcp
+        server_label: WorkIQCalendarUKEF
+        server_url: https://agent365.svc.cloud.microsoft/agents/servers/mcp_CalendarTools
+        project_connection_id: WorkIQCalendarUKEF
+      - type: mcp
+        server_label: WorkIQTeamsUKEF
+        server_url: https://agent365.svc.cloud.microsoft/agents/servers/mcp_TeamsServer
+        project_connection_id: WorkIQTeamsUKEF
+      - type: mcp
+        server_label: WorkIQSharePoint
+        server_url: https://agent365.svc.cloud.microsoft/agents/servers/mcp_SharePointRemoteServer
+        project_connection_id: WorkIQSharePoint
+      - type: file_search
+        vector_store_ids:
+        - vs_BSjqW17bRN6mlV2kqLE6IY55
+    status: active
+agent_endpoint:
+  version_selector:
+    version_selection_rules:
+    - type: FixedRatio
+      agent_version: '@latest'
+      traffic_percentage: 100
+  protocols:
+  - responses
+  authorization_schemes:
+  - type: Entra
+    isolation_key_source:
+      kind: Entra

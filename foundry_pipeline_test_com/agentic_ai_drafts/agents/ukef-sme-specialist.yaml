@@ -1,0 +1,53 @@
+object: agent
+id: ukef-sme-specialist
+name: ukef-sme-specialist
+versions:
+  latest:
+    metadata:
+      microsoft.voice-live.enabled: 'false'
+      microsoft.voice-live.configuration: '{"session":{"voice":{"name":"en-US-Ava:DragonHDLatestNeural","type":"azure-standard","temperature":0.8,"rate":"1","isHdVoice":true},"inputAudioTranscription":{"model":"azure-speech","language":"auto-detect"},"turnDetection":{"type":"azure_semantic_vad","endOfUtteranceDetection":null,"removeFillerWords":true},"inputAudioNoiseReduction":null,"inputAudioEchoCancellation":null,"fillerResponse":null,"avatar":null,"proactiveEngagement":false}}'
+      description: ''
+      modified_at: '1777406000'
+    object: agent.version
+    id: ukef-sme-specialist:3
+    name: ukef-sme-specialist
+    version: '3'
+    description: ''
+    created_at: 1777406002
+    definition:
+      kind: prompt
+      model: model-router-1
+      instructions: 'Task: Evaluate a business proposal against the UKEF Business
+        Plan 2024-29.
+
+        Evaluation Criteria (The 4 Pillars):
+
+        SME Definition: Does the business meet the UK definition of an SME (fewer
+        than 250 employees, turnover under £50m)?
+
+        Strategic Objective 2 (Additionality): Is there evidence of "Market Failure"?
+        Would this deal happen without UKEF support? (Reference the plan''s goal to
+        complement, not compete with, private banks).
+
+        Export Potential: Does the business have a clear "Export Development" trajectory?
+        (Reference the plan''s focus on helping SMEs scale into international markets).
+
+        Strategic Pillars: Does the project align with "Clean Growth," "Critical Supply
+        Chains," or "Regional Growth" (Leveling Up)?
+
+        Output: Provide a "Viability Score" (1-10) and a list of "Specific Alignment
+        Strengths" based only on the provided Business Plan PDF.'
+      tools: []
+    status: active
+agent_endpoint:
+  version_selector:
+    version_selection_rules:
+    - type: FixedRatio
+      agent_version: '@latest'
+      traffic_percentage: 100
+  protocols:
+  - responses
+  authorization_schemes:
+  - type: Entra
+    isolation_key_source:
+      kind: Entra

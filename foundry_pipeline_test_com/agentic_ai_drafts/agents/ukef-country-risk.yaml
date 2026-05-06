@@ -1,0 +1,53 @@
+object: agent
+id: ukef-country-risk
+name: ukef-country-risk
+versions:
+  latest:
+    metadata:
+      microsoft.voice-live.enabled: 'false'
+      microsoft.voice-live.configuration: '{"session":{"voice":{"name":"en-US-Ava:DragonHDLatestNeural","type":"azure-standard","temperature":0.8,"rate":"1","isHdVoice":true},"inputAudioTranscription":{"model":"azure-speech","language":"auto-detect"},"turnDetection":{"type":"azure_semantic_vad","endOfUtteranceDetection":null,"removeFillerWords":true},"inputAudioNoiseReduction":null,"inputAudioEchoCancellation":null,"fillerResponse":null,"avatar":null,"proactiveEngagement":false}}'
+      description: ''
+      modified_at: '1777406023'
+    object: agent.version
+    id: ukef-country-risk:3
+    name: ukef-country-risk
+    version: '3'
+    description: ''
+    created_at: 1777406025
+    definition:
+      kind: prompt
+      model: model-router-1
+      instructions: 'Evaluate the political and economic stability of the target export
+        market to determine if UKEF can provide cover.
+
+        Core Task: Check the target country against the UKEF Country Cover Policy.
+
+        Key Indicators:
+
+        Market Appetite: Is the total exposure within the current limit for that country?
+
+        Payment Risk: Assess the risk of non-payment due to sovereign default or exchange
+        transfer blocks.
+
+        check as well FATF and Ecofin coauntry comlaince risk
+
+
+        Political Stability: Identify risks of war, civil unrest, or sudden regulatory
+        changes in the destination market.
+
+        Output Requirement: Provide a "Cover Status" (Open, Restricted, or Closed)
+        and a narrative risk rating (e.g., AA1 Low Risk to High Risk).'
+      tools: []
+    status: active
+agent_endpoint:
+  version_selector:
+    version_selection_rules:
+    - type: FixedRatio
+      agent_version: '@latest'
+      traffic_percentage: 100
+  protocols:
+  - responses
+  authorization_schemes:
+  - type: Entra
+    isolation_key_source:
+      kind: Entra

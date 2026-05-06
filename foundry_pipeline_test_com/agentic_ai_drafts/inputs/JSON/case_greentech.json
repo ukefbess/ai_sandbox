@@ -1,0 +1,76 @@
+{
+  "_schema_version": "1.0",
+  "_notes": "UKEF Export Finance Application Case File. Copy this file, rename it case_COMPANYNAME.json, fill in what you know, leave unknown fields as null. Run: python run_full_audit.py case_COMPANYNAME.json",
+  "_schema_version": "1.0",
+  "_notes": "GreenTech Solutions Ltd — clean growth SME exporting solar storage systems",
+
+  "company": {
+    "name": "GreenTech Solutions Ltd",
+    "registration_number": "11223344",
+    "employees": 85,
+    "turnover_gbp": 18000000,
+    "sector": "Energy Storage / Clean Technology",
+    "founded_year": 2016,
+    "website": "https://www.greentechsolutions.co.uk",
+    "uk_regions": ["Midlands", "North West"],
+    "uk_manufacturing": true,
+    "beneficial_owners": ["UK founders (majority owned)"],
+    "group_structure": "Standalone SME"
+  },
+
+  "finance_request": {
+    "product": "Export Working Capital Guarantee",
+    "facility_type": "Working Capital Loan",
+    "amount_gbp": 4000000,
+    "tenor_months": 36,
+    "use_of_proceeds": "Manufacture and export battery storage systems to EU clients",
+    "collateral": "Debentures over assets",
+    "repayment_source": "Export contracts and receivables"
+  },
+
+  "additionality": {
+    "banks_approached": ["HSBC", "Barclays"],
+    "outcome": "Partial support offered but insufficient tenor",
+    "evidence_available": true,
+    "notes": "Private lenders unwilling to extend beyond 18 months without UKEF support"
+  },
+
+  "export_plan": {
+    "target_markets": ["Germany", "Netherlands", "Denmark"],
+    "signed_contracts": true,
+    "pipeline_value_gbp": 12000000,
+    "export_revenue_forecast_3yr_gbp": 45000000,
+    "route_to_market": "Direct contracts with utilities and distributors",
+    "named_buyers": ["Energie GmbH", "NordGrid BV"],
+    "export_percentage_of_revenue": 60
+  },
+
+  "strategic_pillars": {
+    "clean_growth_evidence": "Battery systems supporting renewable grid stability",
+    "co2_avoided_tonnes_pa": 15000,
+    "mw_capacity_enabled": 50,
+    "supply_chain_uk_content_pct": 65,
+    "supply_chain_notes": "Major components sourced and assembled in UK",
+    "regional_jobs_created": 25,
+    "regional_jobs_retained": 80,
+    "regional_investment_gbp": 2000000
+  },
+
+  "financials": {
+    "ebitda_gbp": 3200000,
+    "net_assets_gbp": 9000000,
+    "existing_debt_gbp": 2000000,
+    "credit_rating": "BB",
+    "profitable": true,
+    "financial_projections_available": true
+  },
+
+  "compliance": {
+    "kyc_complete": true,
+    "sanctions_screened": true,
+    "export_controls_checked": true,
+    "aml_checked": true,
+    "pep_screening_done": true,
+    "notes": "No compliance issues identified"
+  }
+}

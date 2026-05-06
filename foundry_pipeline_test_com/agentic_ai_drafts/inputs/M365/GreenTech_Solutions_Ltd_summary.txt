@@ -1,0 +1,65 @@
+--- UKEF CASE SUMMARY: GreenTech Solutions Ltd ---
+
+[COMPANY]
+Name: GreenTech Solutions Ltd
+Registration number: 11223344
+Employees: 85
+Turnover gbp: 18000000
+Sector: Energy Storage / Clean Technology
+Founded year: 2016
+Website: https://www.greentechsolutions.co.uk
+Uk regions: ['Midlands', 'North West']
+Uk manufacturing: True
+Beneficial owners: ['UK founders (majority owned)']
+Group structure: Standalone SME
+
+[FINANCE_REQUEST]
+Product: Export Working Capital Guarantee
+Facility type: Working Capital Loan
+Amount gbp: 4000000
+Tenor months: 36
+Use of proceeds: Manufacture and export battery storage systems to EU clients
+Collateral: Debentures over assets
+Repayment source: Export contracts and receivables
+
+[ADDITIONALITY]
+Banks approached: ['HSBC', 'Barclays']
+Outcome: Partial support offered but insufficient tenor
+Evidence available: True
+Notes: Private lenders unwilling to extend beyond 18 months without UKEF support
+
+[EXPORT_PLAN]
+Target markets: ['Germany', 'Netherlands', 'Denmark']
+Signed contracts: True
+Pipeline value gbp: 12000000
+Export revenue forecast 3yr gbp: 45000000
+Route to market: Direct contracts with utilities and distributors
+Named buyers: ['Energie GmbH', 'NordGrid BV']
+Export percentage of revenue: 60
+
+[STRATEGIC_PILLARS]
+Clean growth evidence: Battery systems supporting renewable grid stability
+Co2 avoided tonnes pa: 15000
+Mw capacity enabled: 50
+Supply chain uk content pct: 65
+Supply chain notes: Major components sourced and assembled in UK
+Regional jobs created: 25
+Regional jobs retained: 80
+Regional investment gbp: 2000000
+
+[FINANCIALS]
+Ebitda gbp: 3200000
+Net assets gbp: 9000000
+Existing debt gbp: 2000000
+Credit rating: BB
+Profitable: True
+Financial projections available: True
+
+[COMPLIANCE]
+Kyc complete: True
+Sanctions screened: True
+Export controls checked: True
+Aml checked: True
+Pep screening done: True
+Notes: No compliance issues identified
+
